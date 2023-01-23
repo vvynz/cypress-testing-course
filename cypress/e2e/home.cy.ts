@@ -20,5 +20,10 @@ describe('home page', () => {
       cy.getByData("course-0").find("a").eq(3).click()
       cy.location("pathname").should("eq", "/testing-your-first-application")
     })
+
+    it("Course: Testing Foundations", () => {
+      cy.getByData("course-1").find("a").eq(3).click()
+      cy.location("pathname").should("eq", "/testing-foundations")
+    })
   })
 })
