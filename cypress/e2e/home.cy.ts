@@ -25,5 +25,10 @@ describe('home page', () => {
       cy.getByData("course-1").find("a").eq(3).click()
       cy.location("pathname").should("eq", "/testing-foundations")
     })
+
+    it.only("Course: Cypress Fundamentals", () => {
+      cy.getByData("course-2").find("a").eq(3).click()
+      cy.location("pathname").should("eq", "/cypress-fundamentals")
+    })
   })
 })
