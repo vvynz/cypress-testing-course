@@ -19,3 +19,8 @@ If we want to target one of the <dt> then we can use the .eq() command. This com
 
 updated test: cy.get("dt").eq(0)
 
+### Hooks
+- beforeEach()
+  - a function that gets called before each test is run
+  Instead of putting cy.visit() at the start of each test, we can simplify and use the beforeEach() hook at the beginning of our tests
+
