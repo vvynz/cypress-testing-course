@@ -12,5 +12,10 @@ describe('User Journey', () => {
     cy.getByData("challenge-answer-0").click()
     cy.getByData("next-lesson-button").should("exist").click()
     cy.location("pathname").should("eq", "/testing-your-first-application/setting-up-data-before-each-test")
+
+    cy.getByData("challenge-answer-0").click()
+    cy.getByData("next-lesson-button").should("exist").click()
+    // cy.location("pathname").should("eq", "http://localhost:3000") // => my initial response but for home page, can just put "/"
+    cy.location("pathname").should("eq", "/")
   })
 })
