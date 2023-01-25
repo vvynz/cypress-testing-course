@@ -14,4 +14,12 @@ An easy way to start discussing on how to test a feature is to start with the en
   - this entire journey should be tested with a single test => can ensure that all pieces within the app are working vs having several tests, testing each step in isolation
   - user journey tests also test all the layers within the tech stack => you test the front-end, back-end, database layer, networking/API layers, etc.
 
-  
+  ### New Features
+  - helpful technique for writing tests when implementing a new feature is to start with the end goal in mind.
+    - what exactly does this feature need to do?
+    - what problem does it solve?
+  - helps to break down the feature into smaller, incremental steps, all of which can be translated into tests
+  - once you have a suite of tests for each step, you can write the necesary code to pass each step. 
+    - allows you to easily refactor code later on && if tests are still passing, give you confidence that you haven't broken things during refactoring
+
+    
