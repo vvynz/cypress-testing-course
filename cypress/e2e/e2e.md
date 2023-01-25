@@ -19,6 +19,8 @@ If we want to target one of the <dt> then we can use the .eq() command. This com
 
 updated test: cy.get("dt").eq(0)
 
+Should also try to use data attributes in tests but when they aren't possible, we should try to use modified tests (not using data attributes) sparingly. 
+
 ### Hooks
 - beforeEach()
   - a function that gets called before each test is run
@@ -34,3 +36,5 @@ Custom commands allows us to reuse code or functionality across all of our Cypre
 ### Happy vs Unhappy Paths
 When writing tests we want to consider testing happy paths, the paths a user can take that lead to successful results, and unhappy paths, the paths a user can take that could get them into trouble, throw an error, cause your app to crash, etc. Should also write tests to ensure malicious users can't get access to private info, perform XSS attacks, and so on.
 
+### Organizing Test With Context
+The context method allows us to group related tests together, making our spec files easier to read. 
