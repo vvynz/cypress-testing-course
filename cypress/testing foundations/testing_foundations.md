@@ -22,4 +22,5 @@ An easy way to start discussing on how to test a feature is to start with the en
   - once you have a suite of tests for each step, you can write the necesary code to pass each step. 
     - allows you to easily refactor code later on && if tests are still passing, give you confidence that you haven't broken things during refactoring
 
-    
+### Bugs
+- good approach: first write a failing test around the bug before fixing it. Once it's fixed, your test will pass && verfies your code eliminates the bug
