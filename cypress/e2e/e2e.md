@@ -24,3 +24,11 @@ updated test: cy.get("dt").eq(0)
   - a function that gets called before each test is run
   Instead of putting cy.visit() at the start of each test, we can simplify and use the beforeEach() hook at the beginning of our tests
 
+### Custom Cypress Commands
+Custom commands allows us to reuse code or functionality across all of our Cypress spec files. 
+
+  In the lesson, we created the getByData custom command.
+  test: cy.get("[data-test='hero-heading']")
+  updated test: cy.getByData("hero-heading")
+
+  
