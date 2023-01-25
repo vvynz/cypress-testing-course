@@ -31,4 +31,6 @@ Custom commands allows us to reuse code or functionality across all of our Cypre
   test: cy.get("[data-test='hero-heading']")
   updated test: cy.getByData("hero-heading")
 
-  
+### Happy vs Unhappy Paths
+When writing tests we want to consider testing happy paths, the paths a user can take that lead to successful results, and unhappy paths, the paths a user can take that could get them into trouble, throw an error, cause your app to crash, etc. Should also write tests to ensure malicious users can't get access to private info, perform XSS attacks, and so on.
+
