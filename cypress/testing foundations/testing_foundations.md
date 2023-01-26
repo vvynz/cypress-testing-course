@@ -40,3 +40,14 @@ An easy way to start discussing on how to test a feature is to start with the en
 - more are adopting CI/CD systems and want to push to production multiple times a day, automated tests are the only way to scale such demand
 - shift left - devs are becoming more involved with testing. The industry now is "shifting left" by having the responsibility of testing fall more and more upon the devs. So testing is now being integrated into the entire software dev lifecycle from the very beginning.
 
+## Testing Pyramid
+(from the top) E2E => Integration => Unit
+
+### Unit Tests
+- at the base of the pyramid are unit tests => they are the foundation for your other tests
+- intended to test a single "unit" within an app. They shouldn't be dependent upon other parts of the system or app.
+- conside thinking of the function you're testing as a black box:
+  - not concerned with the logic inside the functiion, only concern: you expect a specific type of output given a specific type of input
+  - that way, can always refactor the internal code or body of the function without breaking your tests
+
+### Integration Tests
