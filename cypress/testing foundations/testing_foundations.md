@@ -56,3 +56,6 @@ An easy way to start discussing on how to test a feature is to start with the en
 - unit tests test things in isolation; integration tests are never in isolation
 - great for when building a new app from scratch or an app or feature that doesn't have a UI yet. Once there is a UI, should be moving to writing e2e tests.
 
+### End to End Tests
+- test anything that runs in the browser; they imitate what a real user would do
+- e2e tests will often replace your integration tests since they have more significant advantage & value as they're testing real user interactions within your app
