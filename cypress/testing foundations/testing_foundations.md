@@ -51,3 +51,8 @@ An easy way to start discussing on how to test a feature is to start with the en
   - that way, can always refactor the internal code or body of the function without breaking your tests
 
 ### Integration Tests
+- ensure individual pieces or units wthin an app work together as expected
+- unlike unit tests, integration tests are dependent. Their entire purpose is to test the dependencies of each unit within a system are working together correctly.
+- unit tests test things in isolation; integration tests are never in isolation
+- great for when building a new app from scratch or an app or feature that doesn't have a UI yet. Once there is a UI, should be moving to writing e2e tests.
+
