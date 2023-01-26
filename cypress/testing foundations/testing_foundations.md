@@ -35,3 +35,8 @@ An easy way to start discussing on how to test a feature is to start with the en
 - having tests run in CI, every time a new feature is introduced, bug fix, or merge a pull request, we can be confident that the latest change has not broken our app. 
 - testing in CI also provides a useful feedback loop. If any tests fail, the errors will be logged. The cyber's dashboard will allow users know exactly where tests are failing in their CI pipelines so they can quickly debug their code.
 - to ensure the entire stack is configured and working properly, need to test the ui, apis, and even the db layer => all can be done through a single cypress e2e test 
+
+### Automated Testing
+- more are adopting CI/CD systems and want to push to production multiple times a day, automated tests are the only way to scale such demand
+- shift left - devs are becoming more involved with testing. The industry now is "shifting left" by having the responsibility of testing fall more and more upon the devs. So testing is now being integrated into the entire software dev lifecycle from the very beginning.
+
