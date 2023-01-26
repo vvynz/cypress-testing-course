@@ -24,3 +24,14 @@ An easy way to start discussing on how to test a feature is to start with the en
 
 ### Bugs
 - good approach: first write a failing test around the bug before fixing it. Once it's fixed, your test will pass && verfies your code eliminates the bug
+
+## Manual vs Automated Testing
+### Manual Testing
+- involves physically interacting with an app
+- often very time-consuming as it requires repetitive tasks over and over again
+
+### Continuous Integration (CI)
+- the practice of automating the integration of code changes from multiple developers into a single repo. CI allows devs to frequently merge their code to a central repo where builds & tests run against their changes. If a builder test fails the CI system will block the code from being merged with the main branch. 
+- having tests run in CI, every time a new feature is introduced, bug fix, or merge a pull request, we can be confident that the latest change has not broken our app. 
+- testing in CI also provides a useful feedback loop. If any tests fail, the errors will be logged. The cyber's dashboard will allow users know exactly where tests are failing in their CI pipelines so they can quickly debug their code.
+- to ensure the entire stack is configured and working properly, need to test the ui, apis, and even the db layer => all can be done through a single cypress e2e test 
