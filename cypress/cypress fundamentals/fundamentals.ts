@@ -51,4 +51,20 @@ describe("React TodoMVC", () => {
   - also gives native access to things like the window object, document, DOM elements, service workers etc.
   - this distinction is helpful in many ways, including setting up or modifying the FE state libs such as Redux or MobX directly from your Cypress tests
   - anything the browser can access, Cypress can too
+- there are trade-offs though!
+
+/// TRADE-OFFS
+  /// PERMANENT TRADE-OFFS
+  - not a general purpose automation tool
+  - Cy commands run inside of a browser
+  - will never be support for multiple browser tabs
+  - cannot use Cy to drive 2 browsers at once
+  - each test is bound to a single superdomain. Cross-origin navigation inside tests can be enabled by using the cy.origin command.
+
+  /// TEMP TRADE-OFFS
+  have open issues which Cypress will evetually address
+  - workarounds for the lack of a cy.hover() command
+  - no any native or mobile events support
+  - iframe support is somewhat limited, but does work
 */
+
