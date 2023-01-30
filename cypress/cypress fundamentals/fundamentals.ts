@@ -68,3 +68,16 @@ describe("React TodoMVC", () => {
   - iframe support is somewhat limited, but does work
 */
 
+// COMMAND CHAINING
+
+// - Cypress manages a Promise chain, each command yields a "subject" to the next command until the chain ends or there's an error
+
+cy.get(".todo-list li").find("label").should("contain", "Buy Milk")
+
+/* in the expect, cy.get() will provide the <li> subject to .find() which will then search for the <label> element. Finally, we make an assertion that the <label> contains the text "Buy Milk". 
+
+IMPORTANT TO NOTE: not all Cy commands yield a subject that can be chained. Example, cy.clearCookies() yields null, which CANNOT be chained
+
+Cy commands like cy.get() and cy.contains() yield DOM elements that can be chained
+*/
+
