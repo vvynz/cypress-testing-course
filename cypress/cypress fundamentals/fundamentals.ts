@@ -1,5 +1,7 @@
 // HOW TO WRITE A TEST
 
+import { functions } from "lodash"
+
 // writing test should follow a pattern that makes them easy to write, reason about, and expand. 
   // 1 pattern : AAA (Arrage-Act-Assert) - encourages the organization of the test code in a way that allows the most readability and flexibility
 
@@ -23,3 +25,16 @@ cy.get(".todo-list li").should("have. length", 1)
 // ^^ in this ex, we get the element that contains the todo items that we added to the app and are asserting that there is only a single todo
 // this is what a simple Cypress end-to-end test looks like for a TodoMVC application
 
+
+/// A SIMPLE END-TO-END TEST
+
+describe("React TodoMVC", () => {
+  it("adds a single todo", () => {
+    cy.visit("http://localhost:8888") // Arrange
+    cy.get(".new-todo").type("Buy Milk{enter}") // Act
+    cy.get(".todo-list li").should("have. length", 1) // Assert
+  })
+})
+
+// - Cypress is built upon Mocha
+// - all of the functions, other than those that start with cy, come from Mocha 
