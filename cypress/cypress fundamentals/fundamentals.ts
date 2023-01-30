@@ -38,3 +38,17 @@ describe("React TodoMVC", () => {
 
 // - Cypress is built upon Mocha
 // - all of the functions, other than those that start with cy, come from Mocha 
+
+
+// CYPRESS RUNS IN THE BROWSER
+
+/* - Cypress runs inside of the browser 
+ - means your tests are being executed in the same environment as your app
+ - this allows Cypress to detect all events that are fired by your browser and give it real native access to everything within your tests
+ - unlike most other testing tools (like Selenium) - run outside of browser & execute remote commands across the network to control the browser
+ - Cypress also operates at the network level by reading & altering web traffic on the go.
+  - can therefore modify everything coming in and out of the browser, which will allow yout o test your app in ways no other testing tools can
+  - also gives native access to things like the window object, document, DOM elements, service workers etc.
+  - this distinction is helpful in many ways, including setting up or modifying the FE state libs such as Redux or MobX directly from your Cypress tests
+  - anything the browser can access, Cypress can too
+*/
