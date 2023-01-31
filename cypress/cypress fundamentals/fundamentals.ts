@@ -95,3 +95,21 @@ button.click()
   - while commands are executed, their subjects are yielded from one command to the next
   - due to a lot of helpful Cypress code that runs between each command to ensure everything is in order
 */
+
+/// .then()
+
+/* - to directly interact with a subject, can use .then()
+  - .then() behaves similarly to Promises but cannot use things like async/await within Cy tests
+  - whatever is returned from the cb function becomes the new subject and will flow into the following command (cept for undefined)
+*/
+
+cy.get("button").then(($btn) => {
+  const cls = $btn.attr("class")
+  // ...
+})
+
+// - when undefined is return from the cb function, the subject won't be modified, instead will carry over to the next command
+// - like Promises, can return any compatible "tenable" (anything that has a .then() interface), and Cypress will wait for that to resolve before continuing forward through the chain of commands
+
+/// .wrap()
+
