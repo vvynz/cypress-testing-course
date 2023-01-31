@@ -113,3 +113,25 @@ cy.get("button").then(($btn) => {
 
 /// .wrap()
 
+// - in the ex above, $btn is a jQuery object - means that if we want Cypress to perform some action upon it, we first need to use cy.wrap() 
+
+// ex. continued
+
+cy.get("button").then(($btn) => {
+  const cls = $btn.attr("class")
+  
+  cy.wrap($btn).click().should("not.have.class", cls)
+})
+
+// ^^ in the ex. first getting <button> HTML element. OUr subject, is hte <button> HTML element is yielded from cy.get() to .then()
+  // - can access the subject as the variable $btn but need to .wrap() it to perform whatever operations or assertions we would like 
+  // - before our assertion ().should("not.have.class", cls)), we first need Cy to .click() the button. For Cy to click our $btn, we first need to wrap it with cy.wrap() to give it the proper context for Cy to perform to click
+
+// this is something we CANNOT DO
+
+$btn.click().should("not.have.class", cls) // does not work
+
+// MUST use cy.wrap() first. Cypress needs that context needed to interact with $btn
+
+cy.wrap($btn).click().should("not.have.class", cls)
+
