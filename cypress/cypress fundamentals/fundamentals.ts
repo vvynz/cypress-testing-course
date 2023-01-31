@@ -81,3 +81,17 @@ IMPORTANT TO NOTE: not all Cy commands yield a subject that can be chained. Exam
 Cy commands like cy.get() and cy.contains() yield DOM elements that can be chained
 */
 
+
+// UNDERSTANDING THE ASYNCHRONOUS NATURE OF CYPRESS
+
+/// RETURN VS. YIELD
+// - Cy commands DO NOT return their subjects. The ex below is something you CANNOT DO: 
+const button = cy.get("button")
+button.click()
+
+/* - main reason why it isnt recommended to use variables within tests
+- Cy commands YIELDS their subjects
+- cy commands are asynchronous and get queued for execution at a later time
+  - while commands are executed, their subjects are yielded from one command to the next
+  - due to a lot of helpful Cypress code that runs between each command to ensure everything is in order
+*/
