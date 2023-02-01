@@ -163,3 +163,27 @@ cy.get("table").find("tr").as("rows")
 cy.get("@rows")
 
 // ^^ @rows is now a ref to the collection of <tr> el that can be chained off of and interacted with as you would any other el 
+
+/// EXPLICIT WAITS
+
+// - there are times when you want to explicitly want for something
+    // - for ex. you may want to wait on a spec network req to finish before moving forward. best way to handle these is to wait on aliases
+    // anyhting that can be aliased, ccan be waited upon, like elements, intercepts, reqs, etc
+
+// EXAMPLE:
+describe("User Sign-up and Login", () => {
+  beforeEach(() => {
+    cy.request("POST", "/users").as("signup") // creating the signup alias
+  })
+
+  it("should allow a visitor to sign-up, login, and logout", () => {
+    cy.visit("/")
+    // ...
+
+    cy.wait("@signup") // waiting upon the signup alias
+
+    // ...
+  })
+})
+
+// ^^ create an alias called signup for POST req to /users endpoint
