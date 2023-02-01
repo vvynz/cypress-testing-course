@@ -135,3 +135,17 @@ $btn.click().should("not.have.class", cls) // does not work
 
 cy.wrap($btn).click().should("not.have.class", cls)
 
+
+// WAITING & RETRY-ABILITY
+
+/// RETRY-ABILITY & FLAKE RESISTANCE
+
+/* - retry-ability is a core feature of Cypress
+ - most testing tools will req you to add "hard" waits (you tell the tool to wait for a spec amount of time), Cypress will automatically wait for you -- because it runs in the browser
+ - Cypress is notified: 
+    - page loads & unloads
+    - any events fired
+  - smart enought o know how fast an element is animating and will wait for it to stop before acting upon it
+  - will also automatically wait until an element becomes visible, becomes enabled, or when another element is no longer covering it
+  - will pause execution of any commands when a page transitions occurs until new page is fully loaded
+*/
