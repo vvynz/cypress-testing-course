@@ -187,3 +187,15 @@ describe("User Sign-up and Login", () => {
 })
 
 // ^^ create an alias called signup for POST req to /users endpoint
+
+// HOW TO DEBUG FAILING TESTS
+
+/// SCREENSHOTS & VIDEOS
+
+// - in headless mode, screenshots & videos will automatically be recorded anytime there is a failure
+// - can also tell Cypress to manually take a screenshot, using cy.screenshot()
+
+/// LOGGING
+
+// - cy.log() will print a msg to the Cypress command log (like console.log())
+  // - can also use console.log()
