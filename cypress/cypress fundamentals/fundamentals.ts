@@ -149,3 +149,17 @@ cy.wrap($btn).click().should("not.have.class", cls)
   - will also automatically wait until an element becomes visible, becomes enabled, or when another element is no longer covering it
   - will pause execution of any commands when a page transitions occurs until new page is fully loaded
 */
+
+/// ALIASES
+
+// - use aliases to reference elements, reqs, or intercepts across our tests
+// - to create an alias use .as():
+
+cy.get("table").find("tr").as("rows")
+
+// ^^ will get the <table> el, find all the <tr> el, and allow us to reference them as @rows throughout our tests
+// - can access our alias using cy.get() by adding the @ char before our alias name, like:
+
+cy.get("@rows")
+
+// ^^ @rows is now a ref to the collection of <tr> el that can be chained off of and interacted with as you would any other el 
